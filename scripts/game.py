@@ -10,45 +10,70 @@ class Tile(object):
  		self.adjacency_list = adjacency_list 
 
 
+''' the board is represented as a graph'''
 ''' board will be dictionary of keys such as a1,a2,a3,a4 etc'''
-''' each key will have a value as a Tile which will have an adjacency_list to other keys '''
-''' the board will be a graph'''
+''' each key's value will contain an adjacency_list of neighboring Tiles '''
 class Board(object):
 	def __init__(self):
-		self.boardmap = {"a1":Tile("wood",5,["a2", "a3"]), 
-		"a1":Tile("wood",5,["a2", "a3"]), "a1":Tile("wood",5,["a2", "a3"])}
- 		#self.full_hexicon = "  ____\n" +  " /    \ \n"  + "/      \ \n" + "\      / \n" +  " \____/"
- 		#self.down_hexicon = "\n /    \ \n"  + "/      \ \n" + "\      / \n" +  " \____/ \n"
- 		#["---,---,---,---,---,---,---,---,---,---,---,---,---"]
- 		#["---,---,---,---,S3 ,---,W10,---,S3 ,---,---,---,---"]
- 		#["---,---,---,S8 ,---,W10,---,S3 ,---,---,---,---"]
- 		#["---,---,---,---,B3 ,---,W10,---,S3 ,---,---,---,---"]
- 		#["---,---,---,---,B3 ,---,W10,---,S3 ,---,---,---,---"]
- 		#self.boardgraph = 
+		self.boardmap_circular = {
+		"a1":Tile("water",0,["a18", "b1", "a2"]),
+		"a2":Tile("water",0,["a1", "b1", "b2", "a3"]),
+		"a3":Tile("water",0,["a2", "b2", "b3", "a4"]), 
+		"a4":Tile("water",0,["a3", "b3", "a5"]),
+		"a5":Tile("water",0,["a4", "b3", "b4", "a6"]),
+		"a6":Tile("water",0,["a5", "b4", "b5", "a7"]),
+		"a7":Tile("water",0,["a6", "b5", "a8"]),
+		"a8":Tile("water",0,["a7", "b5", "b6", "a9"]),
+		"a9":Tile("water",0,["a8", "b6", "b7", "a10"]),
+		"a10":Tile("water",0,["a9", "b7", "a11"]), 
+		"a11":Tile("water",0,["a10", "b7", "b8", "a12"]),
+		"a12":Tile("water",0,["a11", "b8", "b9", "a13"]),
+		"a13":Tile("water",0,["a12", "b9", "a14"]),
+		"a14":Tile("water",0,["a13", "b9", "b10", "a15"]),
+		"a15":Tile("water",0,["a16", "b10", "b11", "a14"]),
+		"a16":Tile("water",0,["a17", "b11", "a15"]),
+		"a17":Tile("water",0,["a18", "b11", "b12", "a16"]),
+		"a18":Tile("water",0,["a1", "b12", "b1", "a17"]),
+		"b1":Tile("sheep",8,["a1", "a2", "b2", "c2", "b12", "a18"]),
+		"b2":Tile("wood",4,["a2", "a3", "b3", "c2", "c1", "b1"]),
+		"b3":Tile("brick",11,["a3", "a4", "a5", "b4", "c2", "b2"]),
+
+		#need to finsh filling in correct adjacency lists below 
+		"b4":Tile("wood",12,["a3", "b3", "a5"]),
+		"b5":Tile("stone",9,["a4", "b3", "b4", "a6"]),
+		"b6":Tile("sheep",10,["a5", "b4", "b5", "a7"]),
+		"b7":Tile("wood",8,["a6", "b5", "a8"]),
+		"b8":Tile("brick",3,["a7", "b5", "b6", "a9"]),
+		"b9":Tile("sheep",6,["a8", "b6", "b7", "a10"]),
+		"b10":Tile("wood",2,["a9", "b7", "a11"]),
+		"b11":Tile("wheat",5,["a8", "b6", "b7", "a10"]),
+		"b12":Tile("stone",10,["a9", "b7", "a11"]),
+		"c1":Tile("sheep",3,["a18", "b1", "a2"]),
+		"c2":Tile("wheat",6,["a1", "b1", "b2", "a3"]),
+		"c3":Tile("wheat",5,["a2", "b2", "b3", "a4"]), 
+		"c4":Tile("wheat",4,["a3", "b3", "a5"]),
+		"c5":Tile("desert",0,["a4", "b3", "b4", "a6"]),
+		"c6":Tile("stone",9,["a5", "b4", "b5", "a7"]),
+		"d1":Tile("brick",11,["a18", "b1", "a2"])
+		}
+
+	'''
+ 	# TODO
+ 	def generate_board():
+
+ 	def print_board():
+ 		full_hexicon = "  ____\n" +  " /    \ \n"  + "/      \ \n" + "\      / \n" +  " \____/"
+ 		down_hexicon = "\n /    \ \n"  + "/      \ \n" + "\      / \n" +  " \____/ \n"
+
+ 		'''
 
 
 
- 	#self.boardgraph = generate_board():
- 	
- 	#def generate_board():
- 	#	a1 = Tile("a1", "stone", 3, "a2", )
     
-
-
- 	#def print_board():
- 	#	filler = "-------"
-
-
-
-    
-
- #   F4
- # / c \
- #F3-- f4
-'''example: r = Road("a1", "b2") '''
-#class Road(object, color, edge1, edge2):
-#	self.color = color?
-#	self.edges = [edge1, edge2]
+'''example: r = Road(["a1", "b2"]) '''
+class Road(object):
+	def __init__(self, edges):
+		self.edges = edges
 
 '''example: c = City(["a1", "b2", "b3"]) '''
 class City(object):
@@ -67,7 +92,7 @@ class City(object):
 			resources_dict[resource] *= 2 
 		return resources_dict
 
-
+'''example: s = Settlement(["a1", "b2", "b3"]) '''
 class Settlement(object):
 	def __init__(self, adjacency_list):
 		self.color = None
