@@ -60,14 +60,10 @@ class Board(object):
 	'''
  	# TODO
  	def generate_board():
+ 	
 
- 	def print_board():
- 		full_hexicon = "  ____\n" +  " /    \ \n"  + "/      \ \n" + "\      / \n" +  " \____/"
- 		down_hexicon = "\n /    \ \n"  + "/      \ \n" + "\      / \n" +  " \____/ \n"
-
- 		'''
-
-
+	def print_board(self):
+ 	'''
 
     
 '''example: r = Road(["a1", "b2"]) '''
@@ -320,7 +316,6 @@ class Game(object):
 
 
 '''Main method'''
-
 game = Game()
 game.playCatan()
 

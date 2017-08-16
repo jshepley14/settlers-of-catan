@@ -1,0 +1,21 @@
+              ____
+             /b1  \ 
+        ____/xxxxxx\____
+       /b12 \  yy  /b2  \
+  ____/xxxxxx\____/xxxxxx\____
+ /b11 \  yy  /c1  \  yy  /b3  \
+/xxxxxx\____/xxxxxx\____/xxxxxx\
+\  yy  /c6  \  yy  /c2  \  yy  /
+ \____/xxxxxx\____/xxxxxx\____/
+ /b10 \  yy  /d1  \  yy  /b4  \
+/xxxxxx\____/xxxxxx\____/xxxxxx\
+\  yy  /c5  \  yy  /c3  \  yy  /
+ \____/xxxxxx\____/xxxxxx\____/
+ /b9  \  yy  /c4  \  yy  /b5  \
+/xxxxxx\____/xxxxxx\____/xxxxxx\
+\  yy  /b8  \  yy  /b6  \  yy  /
+ \____/xxxxxx\____/xxxxxx\____/
+      \  yy  /b7  \  yy  /
+       \____/xxxxxx\____/
+            \  yy  / 
+             \____/
